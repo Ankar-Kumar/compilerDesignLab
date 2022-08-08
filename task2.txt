@@ -1,0 +1,9 @@
+Numbers of vowels : 18
+Numbers of constants : 28
+
+vowels are :u i e o E 
+constants are :M n m s t h d f C p r S c g 
+
+
+Words started with vowel : is of Engineering 
+Words started with consonant : Munmun the student Computer Science 
