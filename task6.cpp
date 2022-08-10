@@ -27,13 +27,14 @@ bool binary(string str)
     {
         for(i=2; i<str.size(); i++)
         {
-            if(str[i]=='1' || str[0]=='0')
+            if(str[i]=='1' || str[i]=='0')
             {
-                return 1;
+                continue;
             }
             else
                 return 0;
         }
+        return 1;
     }
     else
         return 0;
