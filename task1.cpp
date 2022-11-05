@@ -49,8 +49,10 @@ void countNum(string s)
 }
 int main()
 {
+    freopen("in.txt", "r", stdin);
     string s;
     getline(cin,s);
+
     countNum(s);
 }
 //Md. Tareq Zaman, Part-3, 2011
