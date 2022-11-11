@@ -13,7 +13,7 @@ int main()
     //cin>>str;
     str = "k+l-m*n+(o^p)*w/u/v*t+q";//1*2/3+(4-5^6)+7-8";
     //A+(B*C-(D/E^F)*G)*H";//"(A-B)*(D/E)";//"A*(B+C*D)+E";
-    str = "(" + str + ")";
+    str = "(" + str + ')';
     ans = "";
     for(i=0; i<str.size(); i++)
     {

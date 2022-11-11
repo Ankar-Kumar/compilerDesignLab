@@ -51,7 +51,7 @@ int main()
     {
         cout<<"Undefined 1";
     }
-    else if(str[0]=='c' && str[1]=='h' && str[2]=='_' && (isval(str[3])))
+    else if(str[0]=='c' && str[1]=='h' && str[2]=='_' && (isval(str[3])))  //isAlpha(),,,isDigit() can use too
         cout<<"Character variable";
     else if(str[0]=='b' && str[1]=='n' && str[2]=='_' && (isval(str[3])))
     {

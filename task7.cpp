@@ -38,12 +38,12 @@ int isNumber(string str){
             cn++;
         }
         else if(!isdigit(str[i])){
-            return -1;
+            return 0;
         }
     }
     if(cn==1) return 2;
     if(cn==0) return 1;
-    return 0;
+  
 }
 
 

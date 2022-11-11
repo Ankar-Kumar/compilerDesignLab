@@ -22,8 +22,10 @@ int main(){
 	}
 	words.push_back(temp);
 
-	if(words.size()>1 && words.size()<4)
+	if(words.size()==2 || words.size()==3)
 		yes = 1;
+
+	//pn check ..
 	bool tempyes = 0;
 	for(i=0;i<10;i++){
 		if(words[0]==pn[i])
@@ -31,7 +33,7 @@ int main(){
 	}
 	if(tempyes == 0)
 		yes = 0;
-
+	//verb check
 	tempyes = 0;
 	for(i=0;i<5;i++){
 		if(words[1]==verb[i])
@@ -39,7 +41,7 @@ int main(){
 	}
 	if(tempyes==0)
 		yes = 0;
-
+	//noun check
 	if(words.size()==3){
 		tempyes = 0;
 		for(i=0;i<7;i++){
@@ -47,6 +49,8 @@ int main(){
 				tempyes = 1;
 		}
 	}
+
+	
 	if(!tempyes)
 		yes = 0;
 	if(yes == 1)
