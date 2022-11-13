@@ -1,50 +1,62 @@
-#include<bits/stdc++.h>
-#define P(X) cout<<X<<endl;
-#define P2(X,Y) cout<<X<<" "<<Y<<endl;
+
+#include <bits/stdc++.h>
 using namespace std;
 
-stack<char>st;
-string str,ans;
+int prec(char c)
+{
+    if (c == '^')
+        return 3;
+    else if (c == '/' || c == '*')
+        return 2;
+    else if (c == '+' || c == '-')
+        return 1;
+    else
+        return -1;
+}
 
 int main()
 {
-    int i,j,k,l,m,n;
-    char ch;
-    //cin>>str;
-    str = "k+l-m*n+(o^p)*w/u/v*t+q";//1*2/3+(4-5^6)+7-8";
-    //A+(B*C-(D/E^F)*G)*H";//"(A-B)*(D/E)";//"A*(B+C*D)+E";
-    str = "(" + str + ')';
-    ans = "";
-    for(i=0; i<str.size(); i++)
+    string str;
+    // str = "k+l-m*n+(o^p)*w/u/v*t+q"; // 1*2/3+(4-5^6)+7-8";
+    str = "A+(B*C-(D/E^F)*G)*H"; //"(A-B)*(D/E)";//"A*(B+C*D)+E";
+
+    stack<char> st;
+    string result;
+    for (int i = 0; i < str.length(); i++)
     {
-        if(isalpha(str[i])) ans+=str[i];
-        else if(str[i]=='+' || str[i]=='-')
+        char c = str[i];
+
+        if (isalpha(c) || isdigit(c))
+            result += c;
+        else if (c == '(')
+            st.push(c);
+
+        else if (c == ')')
         {
-            while(st.top()!='(')
+            while (st.top() != '(')
             {
-                ans+=st.top();
+                result += st.top();
                 st.pop();
             }
-            st.push(str[i]);
+            st.pop();
         }
-        else if(str[i]=='*' || str[i]=='/'){
-            while(st.top()!='('&&st.top()!='+'&&st.top()!='-'){
-                    ans+=st.top();
-                    st.pop();
-                  }
-                  st.push(str[i]);
+        else
+        {
+            while (!st.empty() && prec(c) <= prec(st.top()))
+            {
+                result += st.top();
+                st.pop();
+            }
+            st.push(c);
         }
-        else if(str[i]==')'){
-            while(st.top()!='('){
-                    ans+=st.top();
-                    st.pop();
-                  }
-                  st.pop();
-        }
-        else st.push(str[i]);
     }
-    cout<<ans<<endl;
 
+    while (!st.empty())
+    {
+        result += st.top();
+        st.pop();
+    }
+
+    cout << result << endl;
     return 0;
 }
-
