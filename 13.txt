@@ -1,0 +1,8 @@
+E TA
+A +TA
+A e
+T FR
+R *FR
+R e
+F (E)
+F c
