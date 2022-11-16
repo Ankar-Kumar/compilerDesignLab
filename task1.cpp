@@ -49,7 +49,7 @@ void countNum(string s)
 }
 int main()
 {
-    freopen("in.txt", "r", stdin);
+    freopen("in2.txt", "r", stdin);
     string s;
     getline(cin,s);
 

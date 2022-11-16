@@ -1,5 +1,5 @@
 
-//kamol code 
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -82,18 +82,19 @@ void findFollow(char ch)
                         // if it is non-terminal push the first of the non terminal into the follow of ch
                         for (auto ft : first[x])
                         {
-                            follow[ch].insert(ft);
+                            follow[ch].insert(ft);//all first insert into follow of ch
                         }
                         // jodi esp pai othoba ch er soman hoy
                         // tahole dhore nibo eitao ch er soman
-                        if (first[x].count('#') or x == ch)
-                        {
-                            isFound = true;
-                        }
-                        else
-                            isFound = false;
+
+                        // if (first[x].count('#') or x == ch)
+                        // {
+                        //     isFound = true;
+                        // }
+                        // else
+                        //     isFound = false;
                     }
-                    else
+                    else //jodi terminal hoi tahole seta insert kore dibo
                     {
                         follow[ch].insert(x);
                         isFound = false;
@@ -195,26 +196,34 @@ void makeTable()
         table.erase({it.first, '#'});
     }
 }
+
+void findFirst(char ch){
+
+}
 int main()
 {
     takeInput();
     takeFirst();
+    for(auto it:production){
+        findFirst();
+    }
+    
     follow['E'].insert('$');
     for (auto it : production)
     {
         findFollow(it.first);//E pass krchi follow function e
-        // cout << it.first << " : ";
+        cout << it.first << " : ";
 
-        // for (auto ch : follow[it.first])
-        // {
-        //     cout << ch << " ";
-        // }
-        // cout << endl;
+        for (auto ch : follow[it.first])
+        {
+            cout << ch << " ";
+        }
+        cout << endl;
     }
     makeTable();
 
-    for (auto it : table)
-    {
-        cout << "[ " << it.first.first << " , " << it.first.second << " ] : " << it.second << endl;
-    }
+    // for (auto it : table)
+    // {
+    //     cout << "[ " << it.first.first << " , " << it.first.second << " ] : " << it.second << endl;
+    // }
 }

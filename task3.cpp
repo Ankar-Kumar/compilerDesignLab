@@ -3,7 +3,7 @@ using namespace std;
 string str;
 int main()
 {
-    freopen("task3.txt","r",stdin);
+    freopen("in3.txt","r",stdin);
     cin>>str;
     string dept[]={"Computer Science & Engineering, ","Electrical & Electronic Engineering, ","Material Science, "};
     string s[5];

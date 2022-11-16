@@ -109,7 +109,7 @@ void separate(){
 }
 int main(){
 
-    freopen("in.txt","r",stdin);
+    freopen("in2.txt","r",stdin);
    //freopen("task2.txt","w",stdout);
     gets(str);
     count();

@@ -32,7 +32,7 @@ vector<char> first2(char c){
 int main(){
 
     int n=8,i,j,k;
-    freopen("13.txt","r",stdin);
+    freopen("in13.txt","r",stdin);
     string s,s2;
     char c1,c2;
     for(i=0;i<n;i++){
