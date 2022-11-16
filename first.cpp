@@ -3,7 +3,7 @@ using namespace std;
 vector<string> v[111];
 vector<char> first[111], follow;
 int i,j;
-isUpper(char c){
+int isUpper(char c){
     if(c>='A' && c<='Z') return 1;
     else return 0;
 }
@@ -47,7 +47,6 @@ int main(){
               vector<char>st=first2(i);
               cout<<(char)i<<" ";
               for(j=0;j<st.size();j++){
-                first[i].push_back(st[j]);
                 cout<<st[j]<<"";
               }
               cout<<endl<<endl;
